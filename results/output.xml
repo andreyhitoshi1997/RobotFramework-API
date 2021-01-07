@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.0 on win32)" generated="20210107 12:41:04.532" rpa="false">
+<suite id="s1" name="TestCasesAPIActivities" source="C:\Users\andre\OneDrive\Desktop\Udemy\RobotFramework\API\TestCasesAPIActivities.robot">
+<kw name="Conectar a minha API" library="ResourceAPI" type="setup">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>fakeAPI</arg>
+<arg>${URL_API}</arg>
+</arguments>
+<msg timestamp="20210107 12:41:04.823" level="INFO">Creating Session using : alias=fakeAPI, url=https://fakerestapi.azurewebsites.net/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210107 12:41:04.823" endtime="20210107 12:41:04.823"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:04.822" endtime="20210107 12:41:04.823"></status>
+</kw>
+<test id="s1-t1" name="Buscar a listagem de todos os atividades (GET em todos os atividades)">
+<kw name="Requisitar todos os atividades" library="ResourceAPI">
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>fakeAPI</arg>
+<arg>Activities</arg>
+</arguments>
+<assign>
+<var>${RESPOSTA}</var>
+</assign>
+<msg timestamp="20210107 12:41:05.653" level="INFO">GET Request : url=https://fakerestapi.azurewebsites.net/api/v1/Activities 
+ path_url=/api/v1/Activities 
+ headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210107 12:41:05.653" level="INFO">GET Response : url=https://fakerestapi.azurewebsites.net/api/v1/Activities 
+ status=200, reason=OK 
+ body=[{"id":1,"title":"Activity 1","dueDate":"2021-01-07T16:41:05.706676+00:00","completed":false},{"id":2,"title":"Activity 2","dueDate":"2021-01-07T17:41:05.7066811+00:00","completed":true},{"id":3,"title":"Activity 3","dueDate":"2021-01-07T18:41:05.7066814+00:00","completed":false},{"id":4,"title":"Activity 4","dueDate":"2021-01-07T19:41:05.7066817+00:00","completed":true},{"id":5,"title":"Activity 5","dueDate":"2021-01-07T20:41:05.7066819+00:00","completed":false},{"id":6,"title":"Activity 6","dueDate":"2021-01-07T21:41:05.7066825+00:00","completed":true},{"id":7,"title":"Activity 7","dueDate":"2021-01-07T22:41:05.7066828+00:00","completed":false},{"id":8,"title":"Activity 8","dueDate":"2021-01-07T23:41:05.706683+00:00","completed":true},{"id":9,"title":"Activity 9","dueDate":"2021-01-08T00:41:05.7066833+00:00","completed":false},{"id":10,"title":"Activity 10","dueDate":"2021-01-08T01:41:05.7066839+00:00","completed":true},{"id":11,"title":"Activity 11","dueDate":"2021-01-08T02:41:05.7066842+00:00","completed":false},{"id":12,"title":"Activity 12","dueDate":"2021-01-08T03:41:05.7066844+00:00","completed":true},{"id":13,"title":"Activity 13","dueDate":"2021-01-08T04:41:05.7066847+00:00","completed":false},{"id":14,"title":"Activity 14","dueDate":"2021-01-08T05:41:05.706685+00:00","completed":true},{"id":15,"title":"Activity 15","dueDate":"2021-01-08T06:41:05.7066852+00:00","completed":false},{"id":16,"title":"Activity 16","dueDate":"2021-01-08T07:41:05.7066855+00:00","completed":true},{"id":17,"title":"Activity 17","dueDate":"2021-01-08T08:41:05.7066857+00:00","completed":false},{"id":18,"title":"Activity 18","dueDate":"2021-01-08T09:41:05.7066861+00:00","completed":true},{"id":19,"title":"Activity 19","dueDate":"2021-01-08T10:41:05.7066864+00:00","completed":false},{"id":20,"title":"Activity 20","dueDate":"2021-01-08T11:41:05.7066866+00:00","completed":true},{"id":21,"title":"Activity 21","dueDate":"2021-01-08T12:41:05.7066869+00:00","completed":false},{"id":22,"title":"Activity 22","dueDate":"2021-01-08T13:41:05.7066871+00:00","completed":true},{"id":23,"title":"Activity 23","dueDate":"2021-01-08T14:41:05.7066874+00:00","completed":false},{"id":24,"title":"Activity 24","dueDate":"2021-01-08T15:41:05.7066877+00:00","completed":true},{"id":25,"title":"Activity 25","dueDate":"2021-01-08T16:41:05.7066879+00:00","completed":false},{"id":26,"title":"Activity 26","dueDate":"2021-01-08T17:41:05.7066882+00:00","completed":true},{"id":27,"title":"Activity 27","dueDate":"2021-01-08T18:41:05.7066884+00:00","completed":false},{"id":28,"title":"Activity 28","dueDate":"2021-01-08T19:41:05.7066887+00:00","completed":true},{"id":29,"title":"Activity 29","dueDate":"2021-01-08T20:41:05.706689+00:00","completed":false},{"id":30,"title":"Activity 30","dueDate":"2021-01-08T21:41:05.7066892+00:00","completed":true}] 
+ </msg>
+<msg timestamp="20210107 12:41:05.653" level="INFO">c:\users\andre\appdata\local\programs\python\python39\lib\site-packages\urllib3\connectionpool.py:997: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20210107 12:41:05.654" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210107 12:41:04.825" endtime="20210107 12:41:05.654"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESPOSTA.text}</arg>
+</arguments>
+<msg timestamp="20210107 12:41:05.654" level="INFO">[{"id":1,"title":"Activity 1","dueDate":"2021-01-07T16:41:05.706676+00:00","completed":false},{"id":2,"title":"Activity 2","dueDate":"2021-01-07T17:41:05.7066811+00:00","completed":true},{"id":3,"title":"Activity 3","dueDate":"2021-01-07T18:41:05.7066814+00:00","completed":false},{"id":4,"title":"Activity 4","dueDate":"2021-01-07T19:41:05.7066817+00:00","completed":true},{"id":5,"title":"Activity 5","dueDate":"2021-01-07T20:41:05.7066819+00:00","completed":false},{"id":6,"title":"Activity 6","dueDate":"2021-01-07T21:41:05.7066825+00:00","completed":true},{"id":7,"title":"Activity 7","dueDate":"2021-01-07T22:41:05.7066828+00:00","completed":false},{"id":8,"title":"Activity 8","dueDate":"2021-01-07T23:41:05.706683+00:00","completed":true},{"id":9,"title":"Activity 9","dueDate":"2021-01-08T00:41:05.7066833+00:00","completed":false},{"id":10,"title":"Activity 10","dueDate":"2021-01-08T01:41:05.7066839+00:00","completed":true},{"id":11,"title":"Activity 11","dueDate":"2021-01-08T02:41:05.7066842+00:00","completed":false},{"id":12,"title":"Activity 12","dueDate":"2021-01-08T03:41:05.7066844+00:00","completed":true},{"id":13,"title":"Activity 13","dueDate":"2021-01-08T04:41:05.7066847+00:00","completed":false},{"id":14,"title":"Activity 14","dueDate":"2021-01-08T05:41:05.706685+00:00","completed":true},{"id":15,"title":"Activity 15","dueDate":"2021-01-08T06:41:05.7066852+00:00","completed":false},{"id":16,"title":"Activity 16","dueDate":"2021-01-08T07:41:05.7066855+00:00","completed":true},{"id":17,"title":"Activity 17","dueDate":"2021-01-08T08:41:05.7066857+00:00","completed":false},{"id":18,"title":"Activity 18","dueDate":"2021-01-08T09:41:05.7066861+00:00","completed":true},{"id":19,"title":"Activity 19","dueDate":"2021-01-08T10:41:05.7066864+00:00","completed":false},{"id":20,"title":"Activity 20","dueDate":"2021-01-08T11:41:05.7066866+00:00","completed":true},{"id":21,"title":"Activity 21","dueDate":"2021-01-08T12:41:05.7066869+00:00","completed":false},{"id":22,"title":"Activity 22","dueDate":"2021-01-08T13:41:05.7066871+00:00","completed":true},{"id":23,"title":"Activity 23","dueDate":"2021-01-08T14:41:05.7066874+00:00","completed":false},{"id":24,"title":"Activity 24","dueDate":"2021-01-08T15:41:05.7066877+00:00","completed":true},{"id":25,"title":"Activity 25","dueDate":"2021-01-08T16:41:05.7066879+00:00","completed":false},{"id":26,"title":"Activity 26","dueDate":"2021-01-08T17:41:05.7066882+00:00","completed":true},{"id":27,"title":"Activity 27","dueDate":"2021-01-08T18:41:05.7066884+00:00","completed":false},{"id":28,"title":"Activity 28","dueDate":"2021-01-08T19:41:05.7066887+00:00","completed":true},{"id":29,"title":"Activity 29","dueDate":"2021-01-08T20:41:05.706689+00:00","completed":false},{"id":30,"title":"Activity 30","dueDate":"2021-01-08T21:41:05.7066892+00:00","completed":true}]</msg>
+<status status="PASS" starttime="20210107 12:41:05.654" endtime="20210107 12:41:05.656"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${RESPOSTA}</arg>
+</arguments>
+<msg timestamp="20210107 12:41:05.657" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210107 12:41:05.656" endtime="20210107 12:41:05.657"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:04.824" endtime="20210107 12:41:05.657"></status>
+</kw>
+<kw name="Conferir o status code" library="ResourceAPI">
+<arguments>
+<arg>200</arg>
+</arguments>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${RESPOSTA.status_code}</arg>
+<arg>${STATUSCODE_DESEJADO}</arg>
+</arguments>
+<msg timestamp="20210107 12:41:05.658" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210107 12:41:05.658" endtime="20210107 12:41:05.658"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:05.657" endtime="20210107 12:41:05.658"></status>
+</kw>
+<kw name="Conferir o reason" library="ResourceAPI">
+<arguments>
+<arg>OK</arg>
+</arguments>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${RESPOSTA.reason}</arg>
+<arg>${REASON_DESEJADO}</arg>
+</arguments>
+<status status="PASS" starttime="20210107 12:41:05.659" endtime="20210107 12:41:05.659"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:05.659" endtime="20210107 12:41:05.660"></status>
+</kw>
+<kw name="Conferir se retorna uma lista com &quot;30&quot; atividades" library="ResourceAPI">
+<kw name="Length Should Be" library="BuiltIn">
+<doc>Verifies that the length of the given item is correct.</doc>
+<arguments>
+<arg>${RESPOSTA.json()}</arg>
+<arg>${QTDE_LIVROS}</arg>
+</arguments>
+<msg timestamp="20210107 12:41:05.661" level="INFO">Length is 30</msg>
+<status status="PASS" starttime="20210107 12:41:05.661" endtime="20210107 12:41:05.662"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:05.660" endtime="20210107 12:41:05.662"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:04.824" endtime="20210107 12:41:05.662" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Buscar um livro específico (GET em um livro específico)">
+<kw name="Requistiar a atividade &quot;15&quot;" library="ResourceAPI">
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>fakeAPI</arg>
+<arg>Activities/${ID_ACTIVITIES}</arg>
+</arguments>
+<assign>
+<var>${RESPOSTA}</var>
+</assign>
+<msg timestamp="20210107 12:41:05.868" level="INFO">GET Request : url=https://fakerestapi.azurewebsites.net/api/v1/Activities/15 
+ path_url=/api/v1/Activities/15 
+ headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210107 12:41:05.868" level="INFO">GET Response : url=https://fakerestapi.azurewebsites.net/api/v1/Activities/15 
+ status=200, reason=OK 
+ body={"id":15,"title":"Activity 15","dueDate":"2021-01-08T06:41:05.9220195+00:00","completed":false} 
+ </msg>
+<msg timestamp="20210107 12:41:05.868" level="INFO">c:\users\andre\appdata\local\programs\python\python39\lib\site-packages\urllib3\connectionpool.py:997: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20210107 12:41:05.869" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210107 12:41:05.665" endtime="20210107 12:41:05.869"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESPOSTA.text}</arg>
+</arguments>
+<msg timestamp="20210107 12:41:05.869" level="INFO">{"id":15,"title":"Activity 15","dueDate":"2021-01-08T06:41:05.9220195+00:00","completed":false}</msg>
+<status status="PASS" starttime="20210107 12:41:05.869" endtime="20210107 12:41:05.870"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${RESPOSTA}</arg>
+</arguments>
+<msg timestamp="20210107 12:41:05.870" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210107 12:41:05.870" endtime="20210107 12:41:05.870"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:05.665" endtime="20210107 12:41:05.870"></status>
+</kw>
+<kw name="Conferir o status code" library="ResourceAPI">
+<arguments>
+<arg>200</arg>
+</arguments>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${RESPOSTA.status_code}</arg>
+<arg>${STATUSCODE_DESEJADO}</arg>
+</arguments>
+<msg timestamp="20210107 12:41:05.871" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210107 12:41:05.871" endtime="20210107 12:41:05.871"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:05.871" endtime="20210107 12:41:05.872"></status>
+</kw>
+<kw name="Conferir o reason" library="ResourceAPI">
+<arguments>
+<arg>OK</arg>
+</arguments>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${RESPOSTA.reason}</arg>
+<arg>${REASON_DESEJADO}</arg>
+</arguments>
+<status status="PASS" starttime="20210107 12:41:05.873" endtime="20210107 12:41:05.873"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:05.872" endtime="20210107 12:41:05.873"></status>
+</kw>
+<kw name="Conferir se retorna todos os dados a atividade 15" library="ResourceAPI">
+<kw name="Dictionary Should Contain Item" library="Collections">
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<arguments>
+<arg>${RESPOSTA.json()}</arg>
+<arg>id</arg>
+<arg>${ACTIVITY_15.id}</arg>
+</arguments>
+<status status="PASS" starttime="20210107 12:41:05.874" endtime="20210107 12:41:05.874"></status>
+</kw>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<arguments>
+<arg>${RESPOSTA.json()}</arg>
+<arg>title</arg>
+<arg>${ACTIVITY_15.title}</arg>
+</arguments>
+<status status="PASS" starttime="20210107 12:41:05.875" endtime="20210107 12:41:05.875"></status>
+</kw>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<arguments>
+<arg>${RESPOSTA.json()}</arg>
+<arg>completed</arg>
+<arg>${ACTIVITY_15.completed}</arg>
+</arguments>
+<status status="PASS" starttime="20210107 12:41:05.875" endtime="20210107 12:41:05.875"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:05.874" endtime="20210107 12:41:05.875"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:05.664" endtime="20210107 12:41:05.876" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Cadastrar um nova atividade(POST)">
+<kw name="Cadastrar um nova atividade" library="ResourceAPI">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>content-type=application/json</arg>
+</arguments>
+<assign>
+<var>${HEADERS}</var>
+</assign>
+<msg timestamp="20210107 12:41:05.880" level="INFO">${HEADERS} = {'content-type': 'application/json'}</msg>
+<status status="PASS" starttime="20210107 12:41:05.880" endtime="20210107 12:41:05.880"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>fakeAPI</arg>
+<arg>Activities</arg>
+<arg>data={"id": 2323,"title": "teste","dueDate": "2021-01-07T15:35:22.956Z", "completed": true}</arg>
+<arg>headers=${HEADERS}</arg>
+</arguments>
+<assign>
+<var>${RESPOSTA}</var>
+</assign>
+<msg timestamp="20210107 12:41:06.086" level="INFO">POST Request : url=https://fakerestapi.azurewebsites.net/api/v1/Activities 
+ path_url=/api/v1/Activities 
+ headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/json', 'Content-Length': '86'} 
+ body=b'{"id": 2323,"title": "teste","dueDate": "2021-01-07T15:35:22.956Z", "completed": true}' 
+ </msg>
+<msg timestamp="20210107 12:41:06.086" level="INFO">POST Response : url=https://fakerestapi.azurewebsites.net/api/v1/Activities 
+ status=200, reason=OK 
+ body={"id":2323,"title":"teste","dueDate":"2021-01-07T15:35:22.956Z","completed":true} 
+ </msg>
+<msg timestamp="20210107 12:41:06.086" level="INFO">c:\users\andre\appdata\local\programs\python\python39\lib\site-packages\urllib3\connectionpool.py:997: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20210107 12:41:06.088" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210107 12:41:05.880" endtime="20210107 12:41:06.088"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RESPOSTA.text}</arg>
+</arguments>
+<msg timestamp="20210107 12:41:06.088" level="INFO">{"id":2323,"title":"teste","dueDate":"2021-01-07T15:35:22.956Z","completed":true}</msg>
+<status status="PASS" starttime="20210107 12:41:06.088" endtime="20210107 12:41:06.088"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${RESPOSTA}</arg>
+</arguments>
+<msg timestamp="20210107 12:41:06.088" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210107 12:41:06.088" endtime="20210107 12:41:06.088"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:05.879" endtime="20210107 12:41:06.089"></status>
+</kw>
+<status status="PASS" starttime="20210107 12:41:05.878" endtime="20210107 12:41:06.089" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210107 12:41:04.535" endtime="20210107 12:41:06.091"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" id="s1" name="TestCasesAPIActivities">TestCasesAPIActivities</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210107 12:41:04.525" level="ERROR">Error in file 'C:\Users\andre\OneDrive\Desktop\Udemy\RobotFramework\API\TestCasesAPIActivities.robot' on line 2: Non-existing setting 'Documentation Documentação da API: https://fakerestapi.azurewebsites.net/api/v1/Activities'.</msg>
+</errors>
+</robot>
